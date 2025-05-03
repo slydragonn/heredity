@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { Menu, X, ChevronDown } from "lucide-react"
-import styles from "./Navbar.module.css"
-import Logo from "../Logo/Logo"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import styles from "./Navbar.module.css";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <nav className={styles.navbar}>
@@ -35,7 +35,9 @@ const Navbar = () => {
             >
               Servicios <ChevronDown size={16} />
             </button>
-            <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}>
+            <div
+              className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}
+            >
               <Link to="/crear-testamento" className={styles.dropdownItem}>
                 Crear Testamento
               </Link>
@@ -69,7 +71,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
