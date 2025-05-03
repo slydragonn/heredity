@@ -4,22 +4,23 @@ import Hero from "./components/Hero/Hero";
 import TestamentForm from "./components/TestamentForm/TestamentForm";
 import Dashboard from "./components/Dashboard/Dashboard";
 import AuthForms from "./components/Auth/AuthForms"; // Importa AuthForms
+import AuthPage from "./components/Auth/AuthPage";
 import "./App.css";
 
-// Página de inicio (HomePage)
+
 const HomePage = () => {
   return (
     <>
       <Navbar />
       <Hero />
       <div className="features-section">
-        {/* Contenido adicional de la página de inicio */}
+        
       </div>
     </>
   );
 };
 
-// Página para crear un testamento (CreateTestamentPage)
+
 const CreateTestamentPage = () => {
   return (
     <>
@@ -51,8 +52,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/crear-testamento" element={<CreateTestamentPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/login" element={<AuthForms />} /> {/* Ruta para el login */}
-        <Route path="/registro" element={<AuthForms />} /> {/* Ruta para el registro */}
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </Router>
   );

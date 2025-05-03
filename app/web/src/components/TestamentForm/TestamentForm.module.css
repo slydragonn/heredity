@@ -1,380 +1,380 @@
 .formContainer {
-    max-width: 800px;
-    margin: 2rem auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.formHeader {
+  background-color: #0a1128;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.formHeader h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.formHeader p {
+  color: #ced4da;
+}
+
+.progressBar {
+  padding: 1.5rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.progressSteps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stepIndicator {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.progressStep.active .stepIndicator {
+  background-color: #4dabf7;
+  color: #ffffff;
+}
+
+.progressStep span {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.progressStep.active span {
+  color: #0a1128;
+  font-weight: 600;
+}
+
+.progressLine {
+  flex: 1;
+  height: 2px;
+  background-color: #e9ecef;
+  position: relative;
+  z-index: 0;
+}
+
+.form {
+  padding: 2rem;
+}
+
+.formStep {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #0a1128;
+}
+
+.beneficiariesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.beneficiaryItem {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.beneficiaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.beneficiaryHeader h3 {
+  font-size: 1.125rem;
+  color: #0a1128;
+}
+
+.removeButton {
+  background-color: transparent;
+  color: #dc3545;
+  border: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: #4dabf7;
+  outline: none;
+}
+
+.addButton {
+  background-color: transparent;
+  color: #4dabf7;
+  border: 1px dashed #4dabf7;
+  border-radius: 4px;
+  padding: 0.75rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: rgba(77, 171, 247, 0.05);
+}
+
+.conditionsContainer {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.radioOption input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4dabf7;
+}
+
+.radioOption label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.conditionDetails {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5rem;
+}
+
+.conditionDetails h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #0a1128;
+}
+
+.conditionDetails p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.infoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: rgba(77, 171, 247, 0.1);
+  padding: 1rem;
+  border-radius: 4px;
+  color: #0a1128;
+}
+
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.summarySection {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.summarySection h3 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #0a1128;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.summaryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summaryList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.summaryList li:last-child {
+  border-bottom: none;
+}
+
+.conditionSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.disclaimerBox {
+  background-color: #fff8e6;
+  border: 1px solid #ffeeba;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.disclaimerBox p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.disclaimerBox ul {
+  padding-left: 1.5rem;
+}
+
+.disclaimerBox li {
+  margin-bottom: 0.25rem;
+}
+
+.formNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #f8f9fa;
+}
+
+.nextButton,
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #4dabf7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nextButton:hover,
+.submitButton:hover {
+  background-color: #3793dd;
+}
+
+.submitButton {
+  background-color: #0a1128;
+}
+
+.submitButton:hover {
+  background-color: #1a2a52;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    margin: 1rem;
+  }
+
   .formHeader {
-    background-color: #0a1128;
-    color: #ffffff;
-    padding: 2rem;
-    text-align: center;
+    padding: 1.5rem;
   }
-  
-  .formHeader h1 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .formHeader p {
-    color: #ced4da;
-  }
-  
+
   .progressBar {
-    padding: 1.5rem 2rem;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    padding: 1rem;
   }
-  
-  .progressSteps {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .progressStep {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .stepIndicator {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #e9ecef;
-    color: #6c757d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .progressStep.active .stepIndicator {
-    background-color: #4dabf7;
-    color: #ffffff;
-  }
-  
-  .progressStep span {
-    font-size: 0.875rem;
-    color: #6c757d;
-    font-weight: 500;
-  }
-  
-  .progressStep.active span {
-    color: #0a1128;
-    font-weight: 600;
-  }
-  
-  .progressLine {
-    flex: 1;
-    height: 2px;
-    background-color: #e9ecef;
-    position: relative;
-    z-index: 0;
-  }
-  
+
   .form {
-    padding: 2rem;
+    padding: 1rem;
   }
-  
-  .formStep {
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+
   .stepTitle {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #0a1128;
+    font-size: 1.25rem;
   }
-  
-  .beneficiariesList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
+
   .beneficiaryItem {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-    border: 1px solid #e9ecef;
-  }
-  
-  .beneficiaryHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .beneficiaryHeader h3 {
-    font-size: 1.125rem;
-    color: #0a1128;
-  }
-  
-  .removeButton {
-    background-color: transparent;
-    color: #dc3545;
-    border: none;
-    font-size: 0.875rem;
-    cursor: pointer;
-  }
-  
-  .formGroup {
-    margin-bottom: 1rem;
-  }
-  
-  .formGroup label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #495057;
-  }
-  
-  .formGroup input,
-  .formGroup select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  .formGroup input:focus,
-  .formGroup select:focus {
-    border-color: #4dabf7;
-    outline: none;
-  }
-  
-  .addButton {
-    background-color: transparent;
-    color: #4dabf7;
-    border: 1px dashed #4dabf7;
-    border-radius: 4px;
-    padding: 0.75rem;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .addButton:hover {
-    background-color: rgba(77, 171, 247, 0.05);
-  }
-  
-  .conditionsContainer {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
-  
-  .radioGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .radioOption {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .radioOption input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #4dabf7;
-  }
-  
-  .radioOption label {
-    font-weight: 500;
-    color: #495057;
-  }
-  
-  .conditionDetails {
-    border-top: 1px solid #dee2e6;
-    padding-top: 1.5rem;
-  }
-  
-  .conditionDetails h3 {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-    color: #0a1128;
-  }
-  
-  .conditionDetails p {
-    color: #6c757d;
-    margin-bottom: 1.5rem;
-  }
-  
-  .infoBox {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    background-color: rgba(77, 171, 247, 0.1);
-    padding: 1rem;
-    border-radius: 4px;
-    color: #0a1128;
-  }
-  
-  .summaryContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .summarySection {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
-  
-  .summarySection h3 {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
-    color: #0a1128;
-    border-bottom: 1px solid #dee2e6;
-    padding-bottom: 0.5rem;
-  }
-  
-  .summaryList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .summaryList li {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #e9ecef;
-  }
-  
-  .summaryList li:last-child {
-    border-bottom: none;
-  }
-  
-  .conditionSummary {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .disclaimerBox {
-    background-color: #fff8e6;
-    border: 1px solid #ffeeba;
-    border-radius: 4px;
     padding: 1rem;
   }
-  
-  .disclaimerBox p {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  
-  .disclaimerBox ul {
-    padding-left: 1.5rem;
-  }
-  
-  .disclaimerBox li {
-    margin-bottom: 0.25rem;
-  }
-  
-  .formNavigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e9ecef;
-  }
-  
-  .backButton {
-    padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    color: #6c757d;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .backButton:hover {
-    background-color: #f8f9fa;
-  }
-  
-  .nextButton,
-  .submitButton {
-    padding: 0.75rem 1.5rem;
-    background-color: #4dabf7;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .nextButton:hover,
-  .submitButton:hover {
-    background-color: #3793dd;
-  }
-  
-  .submitButton {
-    background-color: #0a1128;
-  }
-  
-  .submitButton:hover {
-    background-color: #1a2a52;
-  }
-  
-  @media (max-width: 768px) {
-    .formContainer {
-      margin: 1rem;
-    }
-  
-    .formHeader {
-      padding: 1.5rem;
-    }
-  
-    .progressBar {
-      padding: 1rem;
-    }
-  
-    .form {
-      padding: 1rem;
-    }
-  
-    .stepTitle {
-      font-size: 1.25rem;
-    }
-  
-    .beneficiaryItem {
-      padding: 1rem;
-    }
-  }
-  
+}
