@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-100;
+}
+
+.btn {
+  @apply px-4 py-2 font-bold rounded-lg transition-all;
+}
+
+.btn-primary {
+  @apply bg-avalanche text-white hover:bg-avalanche-dark;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-avalanche;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 mb-4;
+}
