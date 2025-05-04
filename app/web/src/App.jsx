@@ -29,8 +29,7 @@ const DashboardPage = () => (
   </div>
 );
 
-// Componente que contiene Navbar, Routes y Footer
-// Componente que contiene Navbar, Routes y Footer
+
 function AppLayout() {
   const location = useLocation();
   const hideLayoutRoutes = ["/auth"];
