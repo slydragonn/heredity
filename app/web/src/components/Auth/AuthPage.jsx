@@ -5,7 +5,6 @@ import Navbar from "../Navbar/Navbar";
 const AuthPage = () => {
   return (
     <>
-      <Navbar />
       <AuthForms />
     </>
   );

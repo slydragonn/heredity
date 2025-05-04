@@ -28,31 +28,6 @@ const Navbar = () => {
             Inicio
           </Link>
 
-          <div className={styles.dropdown}>
-            <button
-              className={styles.dropdownToggle}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              Servicios <ChevronDown size={16} />
-            </button>
-            <div
-              className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}
-            >
-              <Link to="/crear-testamento" className={styles.dropdownItem}>
-                Crear Testamento
-              </Link>
-              <Link to="/gestionar-activos" className={styles.dropdownItem}>
-                Gestionar Activos
-              </Link>
-              <Link to="/beneficiarios" className={styles.dropdownItem}>
-                Beneficiarios
-              </Link>
-            </div>
-          </div>
-
-          <Link to="/como-funciona" className={styles.menuItem}>
-            Cómo Funciona
-          </Link>
           <Link to="/faq" className={styles.menuItem}>
             FAQ
           </Link>

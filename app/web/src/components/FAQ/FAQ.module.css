@@ -1,0 +1,230 @@
+.faqContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .whyUsSection {
+    background: linear-gradient(135deg, #0a1128 0%, #1a2a52 100%);
+    color: #ffffff;
+    padding: 5rem 0 3rem;
+    width: 100%;
+  }
+  
+  .whyUsContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ffffff, #4dabf7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #e9ecef;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: #ced4da;
+    max-width: 800px;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .feature {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .featureIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(77, 171, 247, 0.1);
+    color: #4dabf7;
+    margin-bottom: 1rem;
+  }
+  
+  .featureContent h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .featureContent p {
+    color: #ced4da;
+    line-height: 1.5;
+  }
+  
+  .questionsSection {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+  }
+  
+  .questionsContent {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0a1128;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  
+  .faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .faqItem {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .faqItem:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faqItem.active {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faqQuestion {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faqQuestion h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0a1128;
+    margin: 0;
+  }
+  
+  .faqAnswer {
+    padding: 0 1.5rem 1.5rem;
+    color: #495057;
+    line-height: 1.6;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.5rem;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contactInfo {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .contactInfo h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0a1128;
+    margin-bottom: 1rem;
+  }
+  
+  .contactInfo p {
+    color: #495057;
+    line-height: 1.6;
+  }
+  
+  .contactLink {
+    color: #4dabf7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .contactLink:hover {
+    color: #3793dd;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 992px) {
+    .features {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+  
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .whyUsSection {
+      padding: 3rem 0 2rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .questionsSection {
+      padding: 3rem 0;
+    }
+  
+    .sectionTitle {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  
+    .faqQuestion h3 {
+      font-size: 1rem;
+    }
+  }
+  
