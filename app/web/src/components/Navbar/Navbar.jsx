@@ -62,10 +62,10 @@ const Navbar = () => {
         </div>
 
         <div className={styles.authButtons}>
-          <Link to="/login" className={styles.loginButton}>
+          <Link to="/auth" className={styles.loginButton}>
             Iniciar Sesión
           </Link>
-          <Link to="/registro" className={styles.registerButton}>
+          <Link to="/auth" className={styles.registerButton}>
             Registrarse
           </Link>
         </div>

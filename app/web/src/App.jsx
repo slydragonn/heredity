@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import TestamentForm from "./components/TestamentForm/TestamentForm";
 import Dashboard from "./components/Dashboard/Dashboard";
 import AuthForms from "./components/Auth/AuthForms"; // Importa AuthForms
 import AuthPage from "./components/Auth/AuthPage";
@@ -26,7 +25,7 @@ const CreateTestamentPage = () => {
     <>
       <Navbar />
       <div className="page-container">
-        <TestamentForm />
+       
       </div>
     </>
   );
