@@ -1,0 +1,31 @@
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+  }
+  
+  .h {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .text {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 0 0.25rem;
+  }
+  
+  @media (max-width: 768px) {
+    .h,
+    .t {
+      font-size: 1.5rem;
+    }
+  
+    .text {
+      font-size: 0.75rem;
+    }
+  }
+  
