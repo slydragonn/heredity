@@ -38,11 +38,9 @@ const Navbar = () => {
 
         <div className={styles.authButtons}>
           <Link to="/auth" className={styles.loginButton}>
-            Iniciar Sesión
+            Iniciar Sesión ó Regístrate
           </Link>
-          <Link to="/auth" className={styles.registerButton}>
-            Registrarse
-          </Link>
+
         </div>
       </div>
     </nav>
