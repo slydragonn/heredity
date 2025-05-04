@@ -1,6 +1,7 @@
 import React from "react"
 import { ArrowRight, Shield, Clock, FileText } from "lucide-react"
 import styles from "./Hero.module.css"
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -14,10 +15,9 @@ const Hero = () => {
             condiciones específicas, garantizando que tus deseos se cumplan de forma segura y transparente.
           </p>
           <div className={styles.buttons}>
-            <button className={styles.primaryButton}>
-              Comenzar Ahora <ArrowRight size={16} />
-            </button>
-            <button className={styles.secondaryButton}>Cómo Funciona</button>
+          <Link to="/auth" className={styles.primaryButton}>
+            Comenzar Ahora <ArrowRight size={16} />
+          </Link>
           </div>
         </div>
         <div className={styles.imageContainer}>
