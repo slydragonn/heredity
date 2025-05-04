@@ -6,6 +6,7 @@ import AuthPage from "./components/Auth/AuthPage";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
 import TermsAndConditions from "./components/Legal/TermsAndConditions"
+import ContactPage from "./components/Contact/ContactPage"; 
 import "./App.css";
 
 // Páginas
@@ -40,6 +41,7 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/terminos" element={<TermsAndConditions />} />
+        <Route path="/contacto" element={<ContactPage />} />
       </Routes>
       <Footer />
     </Router>
