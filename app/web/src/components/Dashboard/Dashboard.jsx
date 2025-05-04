@@ -1,41 +1,59 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Wallet, Clock, Users, FileText, Plus, ChevronRight } from "lucide-react"
-import styles from "./Dashboard.module.css"
+import React, { useState } from "react";
+import {
+  Wallet,
+  Clock,
+  Users,
+  FileText,
+  Plus,
+  ChevronRight,
+} from "lucide-react";
+import styles from "./Dashboard.module.css";
+import CreateTestamentModal from "./CreateTestamentModal";
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("testator")
+  const [activeTab, setActiveTab] = useState("testator");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const testaments = [
     {
       id: "1",
+      documentNumber: "123456789",
+      fullName: "Carlos Gómez",
       name: "Testamento Principal",
       beneficiaries: 3,
       assets: "2.5 ETH",
       condition: "Inactividad (12 meses)",
       status: "active",
       createdAt: "2023-10-15",
+      activationDate: "2024-10-15",
     },
     {
       id: "2",
+      documentNumber: "987654321",
+      fullName: "Laura Torres",
       name: "Colección NFT",
       beneficiaries: 1,
       assets: "5 NFTs",
       condition: "Fecha específica (2025-01-01)",
       status: "active",
       createdAt: "2023-11-20",
+      activationDate: "2025-01-01",
     },
     {
       id: "3",
+      documentNumber: "555444333",
+      fullName: "Andrés Muñoz",
       name: "Tokens DeFi",
       beneficiaries: 2,
       assets: "1000 USDC",
       condition: "Manual",
       status: "pending",
       createdAt: "2024-02-05",
+      activationDate: "2024-08-01",
     },
-  ]
+  ];
 
   const inheritedTestaments = [
     {
@@ -47,39 +65,47 @@ const Dashboard = () => {
       status: "pending",
       createdAt: "2023-09-10",
     },
-  ]
+  ];
 
   const getStatusClass = (status) => {
     switch (status) {
       case "active":
-        return styles.statusActive
+        return styles.statusActive;
       case "pending":
-        return styles.statusPending
+        return styles.statusPending;
       case "completed":
-        return styles.statusCompleted
+        return styles.statusCompleted;
       default:
-        return ""
+        return "";
     }
-  }
+  };
 
   const getStatusText = (status) => {
     switch (status) {
       case "active":
-        return "Activo"
+        return "Activo";
       case "pending":
-        return "Pendiente"
+        return "Pendiente";
       case "completed":
-        return "Completado"
+        return "Completado";
       default:
-        return status
+        return status;
     }
-  }
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className={styles.dashboard}>
       <div className={styles.header}>
         <h1>Panel de Control</h1>
-        <button className={styles.createButton}>
+        <button className={styles.createButton} onClick={openModal}>
           <Plus size={16} />
           Crear Testamento
         </button>
@@ -129,13 +155,17 @@ const Dashboard = () => {
 
       <div className={styles.tabs}>
         <button
-          className={`${styles.tabButton} ${activeTab === "testator" ? styles.activeTab : ""}`}
+          className={`${styles.tabButton} ${
+            activeTab === "testator" ? styles.activeTab : ""
+          }`}
           onClick={() => setActiveTab("testator")}
         >
           Mis Testamentos
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === "heir" ? styles.activeTab : ""}`}
+          className={`${styles.tabButton} ${
+            activeTab === "heir" ? styles.activeTab : ""
+          }`}
           onClick={() => setActiveTab("heir")}
         >
           Mis Herencias
@@ -161,28 +191,30 @@ const Dashboard = () => {
               <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th>Nombre</th>
-                    <th>Beneficiarios</th>
-                    <th>Activos</th>
-                    <th>Condición</th>
+                    <th># Documento</th>
+                    <th>Nombre y Apellido</th>
                     <th>Estado</th>
                     <th>Fecha de Creación</th>
+                    <th>Fecha de Activación</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   {testaments.map((testament) => (
                     <tr key={testament.id}>
-                      <td>{testament.name}</td>
-                      <td>{testament.beneficiaries}</td>
-                      <td>{testament.assets}</td>
-                      <td>{testament.condition}</td>
+                      <td>{testament.documentNumber}</td>
+                      <td>{testament.fullName}</td>
                       <td>
-                        <span className={`${styles.status} ${getStatusClass(testament.status)}`}>
+                        <span
+                          className={`${styles.status} ${getStatusClass(
+                            testament.status
+                          )}`}
+                        >
                           {getStatusText(testament.status)}
                         </span>
                       </td>
                       <td>{testament.createdAt}</td>
+                      <td>{testament.activationDate}</td>
                       <td>
                         <button className={styles.detailsButton}>
                           <ChevronRight size={16} />
@@ -220,7 +252,11 @@ const Dashboard = () => {
                         <td>{testament.assets}</td>
                         <td>{testament.condition}</td>
                         <td>
-                          <span className={`${styles.status} ${getStatusClass(testament.status)}`}>
+                          <span
+                            className={`${styles.status} ${getStatusClass(
+                              testament.status
+                            )}`}
+                          >
                             {getStatusText(testament.status)}
                           </span>
                         </td>
@@ -241,14 +277,19 @@ const Dashboard = () => {
                   <FileText size={48} />
                 </div>
                 <h3>No tienes herencias recibidas</h3>
-                <p>Cuando alguien te añada como beneficiario, verás aquí tus herencias.</p>
+                <p>
+                  Cuando alguien te añada como beneficiario, verás aquí tus
+                  herencias.
+                </p>
               </div>
             )}
           </>
         )}
       </div>
-    </div>
-  )
-}
 
-export default Dashboard
+      {isModalOpen && <CreateTestamentModal onClose={closeModal} />}
+    </div>
+  );
+};
+
+export default Dashboard;

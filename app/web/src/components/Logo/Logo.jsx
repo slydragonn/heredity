@@ -6,7 +6,6 @@ const Logo = () => {
     <div className={styles.logo}>
       <span className={styles.h}>H</span>
       <span className={styles.text}>EREDITY</span>
-      <span className={styles.t}>T</span>
     </div>
   )
 }
