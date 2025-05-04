@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Dashboard from "./components/Dashboard/Dashboard";
 import AuthPage from "./components/Auth/AuthPage";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
-import TermsAndConditions from "./components/Legal/TermsAndConditions"
-import ContactPage from "./components/Contact/ContactPage"; 
+import TermsAndConditions from "./components/Legal/TermsAndConditions";
+import ContactPage from "./components/Contact/ContactPage";
 import "./App.css";
 
 // Páginas
@@ -29,11 +29,17 @@ const DashboardPage = () => (
   </div>
 );
 
-// App principal
-function App() {
+// Componente que contiene Navbar, Routes y Footer
+// Componente que contiene Navbar, Routes y Footer
+function AppLayout() {
+  const location = useLocation();
+  const hideLayoutRoutes = ["/auth"];
+  const shouldShowNavbar = !hideLayoutRoutes.includes(location.pathname);
+  const shouldShowFooter = !hideLayoutRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {shouldShowNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/crear-testamento" element={<CreateTestamentPage />} />
@@ -43,7 +49,17 @@ function App() {
         <Route path="/terminos" element={<TermsAndConditions />} />
         <Route path="/contacto" element={<ContactPage />} />
       </Routes>
-      <Footer />
+      {shouldShowFooter && <Footer />}
+    </>
+  );
+}
+
+
+// App principal con Router
+function App() {
+  return (
+    <Router>
+      <AppLayout />
     </Router>
   );
 }

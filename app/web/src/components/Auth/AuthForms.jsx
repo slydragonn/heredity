@@ -1,7 +1,9 @@
 "use client";
+import { Link } from "react-router-dom";
+
 
 import React, { useState } from "react";
-import { Eye, EyeOff, User, Mail, Wallet, Lock, ArrowRight, Shield } from "lucide-react";
+import { Eye, EyeOff, User, Mail, Wallet, Lock, ArrowRight, Shield, ArrowLeft } from "lucide-react";
 import styles from "./AuthForms.module.css";
 
 const AuthForms = () => {
@@ -53,6 +55,10 @@ const AuthForms = () => {
 
   return (
     <div className={styles.authContainer}>
+      <Link to="/" className={styles.backButton}>
+        <ArrowLeft size={20} />
+        <span>Regresar</span>
+      </Link>
       <div className={styles.authWrapper}>
         <div className={styles.authInfo}>
           <div className={styles.infoContent}>

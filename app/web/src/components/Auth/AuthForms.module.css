@@ -1,5 +1,5 @@
 .authContainer {
-  min-height: calc(100vh - 80px); /* Ajustado para dejar espacio para el Navbar */
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
 .authWrapper {
   display: flex;
   width: 100%;
-  height: calc(100vh - 80px); /* Ajustado para dejar espacio para el Navbar */
+  height: 100vh;
   max-width: 100%;
   background-color: #ffffff;
   overflow: hidden;
@@ -314,30 +314,34 @@
   text-decoration: underline;
 }
 
+/* Añadir los estilos para el botón de regreso al inicio: */
 .backButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-    z-index: 10;
-  }
-  
-  .backButton:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  
-  
-  
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.backButton span {
+  font-size: 0.95rem;
+}
 
 /* Responsive styles */
 @media (max-width: 1024px) {
@@ -373,6 +377,16 @@
 
   .tabContent {
     padding: 2rem 1.5rem;
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .backButton span {
+    display: none;
   }
 }
 
